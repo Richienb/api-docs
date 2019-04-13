@@ -7,15 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="theme-color" content="#3F51B5">
-
+    
     <title>Swagger UI (via Richie Bendall's Website)</title>
     <meta name="description" content="This is a place used to host the documentation viewer for Richie Bendall's APIs.">
 
-    <meta name="slack-app-id" content="AA6UG26AE">
-
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui.css">
 
     <style>
         .swagger-ui .opblock.opblock-post {
@@ -103,23 +101,36 @@
             background: #f57c00;
         }
         
-        .swagger-ui .opblock.opblock-head,
+        .swagger-ui .opblock.opblock-head {
+            border-color: #ffffff;
+            background: #ffffff;
+        }
+        
+        .swagger-ui .opblock.opblock-head .opblock-summary-method {
+            background: #3f51b5;
+        }
+        
+        .swagger-ui .opblock.opblock-head .opblock-summary {
+            border-color: #ffffff;
+        }
+        
+        .swagger-ui .opblock.opblock-head .tab-header .tab-item.active h4 span:after {
+            background: #3f51b5;
+        }
+        
         .swagger-ui .opblock.opblock-options {
             border-color: #ffffff;
             background: #ffffff;
         }
         
-        .swagger-ui .opblock.opblock-head .opblock-summary-method,
         .swagger-ui .opblock.opblock-options .opblock-summary-method {
             background: #3f51b5;
         }
         
-        .swagger-ui .opblock.opblock-head .opblock-summary,
         .swagger-ui .opblock.opblock-options .opblock-summary {
             border-color: #ffffff;
         }
         
-        .swagger-ui .opblock.opblock-head .tab-header .tab-item.active h4 span:after,
         .swagger-ui .opblock.opblock-options .tab-header .tab-item.active h4 span:after {
             background: #3f51b5;
         }
@@ -127,7 +138,7 @@
         .swagger-ui .topbar {
             padding: 8px 30px;
             background-color: #3f51b5;
-            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .4), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
         }
         
         .swagger-ui .topbar .download-url-wrapper input[type=text] {
@@ -151,6 +162,7 @@
         
         .swagger-ui .info a {
             font-size: 14px;
+            -webkit-transition: all .4s;
             transition: all .4s;
             font-family: Open Sans, sans-serif;
             color: #3f51b5;
@@ -181,7 +193,7 @@
             margin: 0 0 15px;
             border: none;
             border-radius: 2px;
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
         }
     </style>
 
@@ -195,8 +207,8 @@
     <main id="swagger-ui"></main>
 
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-    <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-standalone-preset.js"></script>
-    <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui-standalone-preset.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui-bundle.js"></script>
 
     <script>
         var ui = SwaggerUIBundle({
@@ -206,7 +218,6 @@
             plugins: [SwaggerUIBundle.plugins.DownloadUrl],
             layout: "StandaloneLayout"
         });
-
         window.ui = ui;
     </script>
 
